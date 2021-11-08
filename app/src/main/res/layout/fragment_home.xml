@@ -51,7 +51,7 @@
             android:layout_width="217dp"
             android:layout_height="82dp"
             android:layout_weight="1"
-            android:text="Faire l'appel" />
+            android:text="Faire l'appel !" />
 
         <Space
             android:layout_width="wrap_content"
