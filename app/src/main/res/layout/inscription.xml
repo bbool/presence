@@ -12,7 +12,8 @@
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-2dp">
+        tools:layout_editor_absoluteX="-2dp"
+        tools:ignore="MissingConstraints">
 
         <Space
             android:layout_width="match_parent"
