@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteX="-2dp"
         tools:ignore="MissingConstraints">
 
-        <Space
+        <View
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/logo" />
 
-        <Space
+        <View
             android:layout_width="match_parent"
             android:layout_height="37dp" />
 
@@ -64,7 +64,7 @@
                 android:ems="10"
                 android:inputType="textPersonName" />
 
-            <Space
+            <View
                 android:layout_width="55dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
@@ -78,7 +78,7 @@
                 android:inputType="textPersonName" />
         </LinearLayout>
 
-        <Space
+        <View
             android:layout_width="match_parent"
             android:layout_height="26dp" />
 
@@ -95,7 +95,7 @@
             android:ems="10"
             android:inputType="textEmailAddress" />
 
-        <Space
+        <View
             android:layout_width="match_parent"
             android:layout_height="35dp" />
 
@@ -112,7 +112,7 @@
             android:ems="10"
             android:inputType="textPassword" />
 
-        <Space
+        <View
             android:layout_width="match_parent"
             android:layout_height="35dp" />
 
@@ -129,11 +129,11 @@
             android:ems="10"
             android:inputType="textPassword" />
 
-        <Space
+        <View
             android:layout_width="match_parent"
             android:layout_height="32dp" />
 
-        <Space
+        <View
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -144,7 +144,7 @@
             android:background="@color/blue_color"
             android:text="s'inscrire" />
 
-        <Space
+        <View
             android:layout_width="match_parent"
             android:layout_height="11dp" />
 

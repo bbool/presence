@@ -20,7 +20,7 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="75dp">
 
-            <Space
+            <View
                 android:layout_width="match_parent"
                 android:layout_height="141dp" />
 
@@ -32,7 +32,7 @@
 
             </LinearLayout>
 
-            <Space
+            <View
         android:layout_width="match_parent"
         android:layout_height="161dp" />
 
@@ -41,7 +41,7 @@
         android:layout_height="79dp"
         android:orientation="horizontal">
 
-        <Space
+        <View
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -53,13 +53,13 @@
             android:layout_weight="1"
             android:text="Faire l'appel !" />
 
-        <Space
+        <View
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
     </LinearLayout>
 
-    <Space
+    <View
         android:layout_width="match_parent"
         android:layout_height="76dp" />
 
