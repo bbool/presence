@@ -57,7 +57,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editTextTextPersonNom"
+                android:id="@+id/nomInscription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -70,7 +70,7 @@
                 android:layout_weight="1" />
 
             <EditText
-                android:id="@+id/editTextTextPersonPrenom"
+                android:id="@+id/prenomInscription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -89,7 +89,7 @@
             android:text="Votre mail" />
 
         <EditText
-            android:id="@+id/editTextTextEmail"
+            android:id="@+id/mailInscription"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -106,7 +106,7 @@
             android:text="Votre mot de passe" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/mdpInscription"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -123,7 +123,7 @@
             android:text="Verification mot de passe" />
 
         <EditText
-            android:id="@+id/editTextTextPasswordVerif"
+            android:id="@+id/mdpVerifInscription"
             android:layout_width="367dp"
             android:layout_height="wrap_content"
             android:ems="10"

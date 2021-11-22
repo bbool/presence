@@ -37,7 +37,7 @@
             android:text="Votre E-mail" />
 
         <EditText
-            android:id="@+id/editTextEmailConnexion"
+            android:id="@+id/SaisieEmailConnexion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -54,7 +54,7 @@
             android:text="Votre mot de passe" />
 
         <EditText
-            android:id="@+id/editTextPasswordConnexion"
+            android:id="@+id/SaisiePasswordConnexion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -65,7 +65,7 @@
             android:layout_height="77dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonConnexion"
             android:layout_width="316dp"
             android:layout_height="wrap_content"
             android:background="@color/blue_color"
@@ -76,7 +76,7 @@
             android:layout_height="14dp" />
 
         <TextView
-            android:id="@+id/activity_main_link_inscrir"
+            android:id="@+id/inscription_link_inscrir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Créer un compte ?"

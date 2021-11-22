@@ -20,19 +20,19 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="75dp">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="64dp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="141dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="193dp"
-        android:background="#B0072E74"
-        android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="193dp"
+                android:background="#B0072E74"
+                android:orientation="vertical">
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <Space
+            <Space
         android:layout_width="match_parent"
         android:layout_height="161dp" />
 
