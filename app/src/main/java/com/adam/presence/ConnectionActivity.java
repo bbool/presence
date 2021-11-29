@@ -36,13 +36,26 @@ public class MainActivity extends AppCompatActivity {
 
         TextView btn = (TextView)findViewById(R.id.inscription_link_inscrir);
 
+        TextView btnForget = (TextView)findViewById(R.id.inscription_link_forgetPassword);
+
         btn.setOnClickListener(new View.OnClickListener()
         {
 
             @Override
             public void onClick(View v)
             {
-                Intent appel = new Intent(MainActivity.this, SignInActivity.class);
+                Intent appel = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(appel);
+            }
+        });
+
+        btnForget.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                Intent appel = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(appel);
             }
         });
@@ -86,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
+
                         }
                     }
                 });

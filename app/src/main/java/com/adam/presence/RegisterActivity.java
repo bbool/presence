@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.adam.presence.Utilisateur;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignInActivity extends AppCompatActivity {
     private String TAG = "Utilisateur";
@@ -61,6 +64,12 @@ public class SignInActivity extends AppCompatActivity {
 
     protected void inscription ()
     {
+        EditText lenom = findViewById(R.id. nomInscription);
+        String nom = lenom.getText().toString();
+
+        EditText leprenom = findViewById(R.id. prenomInscription);
+        String prenom = leprenom.getText().toString();
+
         //récupération et transformation en String du mail
         EditText lemail = findViewById(R.id. mailInscription);
         String email = lemail.getText().toString();
@@ -90,15 +99,18 @@ public class SignInActivity extends AppCompatActivity {
                                 Log.d(TAG, "utilisateur créé avec succès");
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 updateUI(user);
+                                writeNewUser(user.getUid(),prenom,nom);
 
-                                Intent appel = new Intent(SignInActivity.this, accueil.class);
+                                Toast.makeText(SignInActivity.this, "Nouveau compte créé avec succès", Toast.LENGTH_SHORT).show();
+
+                                Intent appel = new Intent(SignInActivity.this, MainActivity.class);
                                 startActivity(appel);
 
                             } else {
 // If sign in fails, display a message to the user.
                                 Log.w(TAG, "Echec d'ajout dans firebase", task.getException());
                                 Log.w(TAG, email + " " + password);
-                                Toast.makeText(SignInActivity.this, "creation failed.",
+                                Toast.makeText(SignInActivity.this, "Une erreur est survenue. Veuillez réessayer ",
                                         Toast.LENGTH_SHORT).show();
                                 updateUI(null);
                             }
@@ -114,5 +126,20 @@ public class SignInActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
     }
+
+    // création document dans collection utilisateurs realtime database
+
+    public void writeNewUser(String userId, String name, String lastname) {
+        Log.w(TAG, "dans la nouvelle fonction");
+        DatabaseReference mDatabase;
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        Utilisateur user = new Utilisateur(name, lastname, userId);
+
+        mDatabase.child("utilisateurs").child(userId).setValue(user); //.child(userId).
+        user.affiche();
+
+    }
+
 
 }
