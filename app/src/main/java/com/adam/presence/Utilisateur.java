@@ -2,18 +2,18 @@ package com.adam.presence;
 
 import android.util.Log;
 
-public class Person
+public class Utilisateur
 {
-    private String TAG = "Person";
+    private String TAG = "Utilisateur";
     private String name;
     private String lastName;
     private String id;
 
-    public Person()
+    public Utilisateur()
     {
     }
 
-    public Person(String name, String lastName, String idUser)
+    public Utilisateur(String name, String lastName, String idUser)
     {
         this.name = name;
         this.lastName = lastName;

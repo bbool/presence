@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView btn = (TextView)findViewById(R.id.inscription_link_inscrir);
 
-        TextView btnForget = (TextView)findViewById(R.id.inscription_link_forgetPassword);
+        //TextView btnForget = (TextView)findViewById(R.id.inscription_link_forgetPassword);
 
         btn.setOnClickListener(new View.OnClickListener()
         {
@@ -44,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent appel = new Intent(MainActivity.this, RegisterActivity.class);
+                Intent appel = new Intent(MainActivity.this, SignInActivity.class);
                 startActivity(appel);
             }
         });
 
-        btnForget.setOnClickListener(new View.OnClickListener()
+        /*btnForget.setOnClickListener(new View.OnClickListener()
         {
 
             @Override
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent appel = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(appel);
             }
-        });
+        });*/
 
         Button connexion = findViewById(R.id.buttonConnexion);
 
