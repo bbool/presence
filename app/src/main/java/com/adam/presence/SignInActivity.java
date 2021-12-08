@@ -36,7 +36,11 @@ public class SignInActivity extends AppCompatActivity {
         // mDatabase = FirebaseDatabase.getInstance();
         // Write a message to the database
         this.mDatabase = FirebaseDatabase.getInstance();
+<<<<<<< HEAD:app/src/main/java/com/adam/presence/SignInActivity.java
         //this.myRef = mDatabase.getReference("utilisateurs");
+=======
+        this.myRef = mDatabase.getReference("utilisateurs");
+>>>>>>> 4481c36d864d438eab8686b4b06da225e49fe09b:app/src/main/java/com/adam/presence/RegisterActivity.java
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -83,7 +87,11 @@ public class SignInActivity extends AppCompatActivity {
         Log.d(TAG,"deuxieme mdp "+passwordverif);
         Log.d(TAG,"avant le if");
 
+<<<<<<< HEAD:app/src/main/java/com/adam/presence/SignInActivity.java
         //this.myRef.setValue("Hello, World!");
+=======
+        this.myRef.setValue("Hello, World!");
+>>>>>>> 4481c36d864d438eab8686b4b06da225e49fe09b:app/src/main/java/com/adam/presence/RegisterActivity.java
 
         //On vérifi que les deux mdp sont les meme
         if(password.equals(passwordverif)) {
@@ -97,7 +105,11 @@ public class SignInActivity extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 updateUI(user);
                                 Log.d(TAG, "id user:"+user.getUid());
+<<<<<<< HEAD:app/src/main/java/com/adam/presence/SignInActivity.java
                                 writeNewUser(user.getUid(),prenom,nom,email);
+=======
+                                writeNewUser(user.getUid(),prenom,nom);
+>>>>>>> 4481c36d864d438eab8686b4b06da225e49fe09b:app/src/main/java/com/adam/presence/RegisterActivity.java
                                 Intent appel = new Intent(SignInActivity.this, accueil.class);
                                 startActivity(appel);
                             } else {
@@ -118,6 +130,7 @@ public class SignInActivity extends AppCompatActivity {
     private void updateUI(FirebaseUser user) {
     }
 
+<<<<<<< HEAD:app/src/main/java/com/adam/presence/SignInActivity.java
     public void writeNewUser(String userId, String name, String lastname, String mail) {
         Log.w(TAG, "dans la nouvelle fonction");
         Utilisateur user = new Utilisateur(name, lastname,mail);
@@ -138,11 +151,39 @@ public class SignInActivity extends AppCompatActivity {
 
 
 
+=======
+    public void writeNewUser(String userId, String name, String lastname) {
+        Log.w(TAG, "dans la nouvelle fonction");
+
+        utilisateur.setName(name);
+        utilisateur.setLastName(lastname);
+
+        this.mDatabase = FirebaseDatabase.getInstance();
+        this.myRef = mDatabase.getReference("utilisateurs");
+        myRef.child(userId).push().setValue(utilisateur, new
+                DatabaseReference.CompletionListener() {
+                    @Override
+                    public void onComplete(DatabaseError databaseError, DatabaseReference
+                            databaseReference) {
+                        Toast.makeText(SignInActivity.this, "User added.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        /*mDatabase = FirebaseDatabase.getInstance().getReference("presence-3183d-default-rtdb");
+>>>>>>> 4481c36d864d438eab8686b4b06da225e49fe09b:app/src/main/java/com/adam/presence/RegisterActivity.java
 
         mDatabase.child("utilisateurs").child(userId).setValue(utilisateur); //.child(userId).
         utilisateur.affiche();*/
 
 
 
+<<<<<<< HEAD:app/src/main/java/com/adam/presence/SignInActivity.java
+=======
+        mDatabase.child("utilisateurs").child(userId).setValue(utilisateur); //.child(userId).
+        utilisateur.affiche();*/
+
+
+
+>>>>>>> 4481c36d864d438eab8686b4b06da225e49fe09b:app/src/main/java/com/adam/presence/RegisterActivity.java
     }
 }

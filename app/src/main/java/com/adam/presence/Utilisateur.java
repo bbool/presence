@@ -13,7 +13,11 @@ public class Utilisateur
     {
     }
 
+<<<<<<< HEAD:app/src/main/java/com/adam/presence/Utilisateur.java
     public Utilisateur(String name, String lastName, String mail)
+=======
+    public Utilisateur(String name, String lastName, String idUser)
+>>>>>>> 4481c36d864d438eab8686b4b06da225e49fe09b:app/src/main/java/com/adam/presence/Person.java
     {
         this.name     = name;
         this.lastName = lastName;
