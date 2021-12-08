@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Presence">
         <activity
+            android:name=".Appele"
+            android:exported="false" />
+        <activity
             android:name=".SignInActivity"
             android:exported="true" />
         <activity

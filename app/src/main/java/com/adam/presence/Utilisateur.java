@@ -2,22 +2,22 @@ package com.adam.presence;
 
 import android.util.Log;
 
-public class Person
+public class Utilisateur
 {
-    private String TAG = "Person";
+    private String TAG = "Utilisateur";
     private String name;
     private String lastName;
-    private String id;
+    private String email;
 
-    public Person()
+    public Utilisateur()
     {
     }
 
-    public Person(String name, String lastName, String idUser)
+    public Utilisateur(String name, String lastName, String mail)
     {
-        this.name = name;
+        this.name     = name;
         this.lastName = lastName;
-        this.id = idUser;
+        this.email    = mail;
     }
 
     public void setName(String name)
@@ -30,14 +30,14 @@ public class Person
         this.lastName = lastName;
     }
 
-    public void setId(String id)
+    public void setMail(String mail)
     {
-        this.id = id;
+        this.email = mail;
     }
 
-    public String getId()
+    public String getEmail()
     {
-        return id;
+        return email;
     }
 
     public String getLastName()
@@ -51,7 +51,7 @@ public class Person
     }
 
     public void affiche(){
-        String message ="prenom : "+getName()+" \nnom: "+getLastName()+"\nid: "+ getId();
+        String message ="prenom : "+getName()+" \nnom: "+getLastName()+"\nmail: "+ getEmail();
         Log.w(TAG, message);
 
     }
