@@ -7,9 +7,10 @@ public class Professeur {
     private String firstname;
     private String lastname;
     private ArrayList<Groupe> groups;
-    private ArrayList<String> subjects;
+    //private ArrayList<String> subjects;
 
-    public Professeur(String id) {
+    public Professeur(String id)
+    {
         // Get the right Group in Database
     }
 
@@ -49,7 +50,7 @@ public class Professeur {
         this.groups.add(group);
     }
 
-    public ArrayList<String> getSubjects() {
+    /*public ArrayList<String> getSubjects() {
         return subjects;
     }
 
@@ -60,4 +61,5 @@ public class Professeur {
     public void addSubject(String subject) {
         this.subjects.add(subject);
     }
+    */
 }

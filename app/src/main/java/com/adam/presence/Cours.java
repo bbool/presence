@@ -7,24 +7,29 @@ import java.util.Date;
 public class Cours
 {
     private String TAG = "Cours";
+    private String id;
     private String professeur;
     private String matiere;
     private Date dateDebut;
-    private Date dateFin;
-    private float tempsCours;
+    private float duree;
 
     public Cours()
     {
 
     }
 
-    public Cours( String professeur, String matiere, Date dateDebut, Date dateFin, float tempsCours)
+    public Cours( String id, String professeur, String matiere, Date dateDebut, float duree)
     {
+        this.id = id;
         this.professeur = professeur;
         this.matiere = matiere;
         this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.tempsCours = tempsCours;
+        this.duree = duree;
+    }
+
+    public void setId(String id)
+    {
+        this.id = id;
     }
 
     public void setProfesseur(String professeur)
@@ -42,17 +47,17 @@ public class Cours
         this.dateDebut = dateDebut;
     }
 
-    public void setDateFin(Date dateFin)
+    public void setDuree(float duree)
     {
-        this.dateFin = dateFin;
-    }
-
-    public void setTempsCours(float tempsCours)
-    {
-        this.tempsCours = tempsCours;
+        this.duree = duree;
     }
 
 
+
+    public String getId()
+    {
+        return id;
+    }
 
     public String getProfesseur()
     {
@@ -69,39 +74,18 @@ public class Cours
         return dateDebut;
     }
 
-    public Date getDateFin()
+    public float getDuree()
     {
-        return dateFin;
-    }
-
-    public float getTempsCours()
-    {
-        return tempsCours;
+        return duree;
     }
 
 
-    public String tempsDeCours(Date laDateDebut, Date laDateFin)
-    {
-        float leTempsCours=0;
-        String leTempsCoursString="";
 
-        // calcul qui permet de récuperer uniquement l'heure et les minute de "laDateDebut" sous forme de float
-
-        // calcul qui permet de récuperer uniquement l'heure et les minute de "laDateFin" sous forme de float
-
-        // calcul qui permet de faire l'oppération de "laDateFin" - "laDateDebut" et metre cette valeur dans "leTempsCours"
-
-        // transformer "leTempsCours"(float) vers "leTempsCoursString"(String)
-
-        //retourner "leTempsCoursString"
-        return leTempsCoursString;
-    }
 
     public void affiche()
     {
         Date dateDebutTest = null; //null --> donner une date
-        Date dateFinTest = null; //null --> donner une date
-        String message = tempsDeCours(dateDebutTest, dateFinTest);
+        String message = "";
         Log.w(TAG, message);
 
     }

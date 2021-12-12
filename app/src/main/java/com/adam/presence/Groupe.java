@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Groupe {
     private String id;
     private String name;
-    private ArrayList<String> members;
+    private ArrayList<Eleve> eleves;
 
     public Groupe(String id) {
         // Get the right Group in Database
@@ -27,15 +27,15 @@ public class Groupe {
         this.name = name;
     }
 
-    public ArrayList<String> getMembers() {
-        return members;
+    public ArrayList<Eleve> getEleves() {
+        return eleves;
     }
 
-    public void setMembers(ArrayList<String> members) {
-        this.members = members;
+    public void setEleves(ArrayList<Eleve> eleves) {
+        this.eleves = eleves;
     }
 
-    public void addMember(String member) {
-        this.members.add(member);
+    public void addEleves(Eleve eleves) {
+        this.eleves.add(eleves);
     }
 }
