@@ -39,15 +39,15 @@ public class accueil extends AppCompatActivity
         NavigationUI.setupWithNavController(binding.navView, navController);
 
 
-        Button ButtonAppele = findViewById(R.id.id_button_faire_appel);
-        ButtonAppele.setOnClickListener(new View.OnClickListener()
+        Button ButtonAppel = findViewById(R.id.id_button_faire_appel);
+        ButtonAppel.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
 
-                Intent faireAppele = new Intent(accueil.this, Appele.class);
-                startActivity(faireAppele);
+                Intent faireAppel = new Intent(accueil.this, Appel.class);
+                startActivity(faireAppel);
             }
         });
     }

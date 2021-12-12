@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Appele extends AppCompatActivity {
+public class Appel extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
