@@ -4,7 +4,6 @@ import android.util.Log;
 
 public class Utilisateur
 {
-    private String TAG = "Utilisateur";
     private String name;
     private String lastName;
     private String email;
@@ -13,12 +12,7 @@ public class Utilisateur
     {
     }
 
-//<<<<<<< HEAD:app/src/main/java/com/adam/presence/Utilisateur.java
     public Utilisateur(String name, String lastName, String mail)
-//=======
-    /*
-    public Utilisateur(String name, String lastName, String idUser)
->>>>>>> 4481c36d864d438eab8686b4b06da225e49fe09b:app/src/main/java/com/adam/presence/Person.java*/
     {
         this.name     = name;
         this.lastName = lastName;
@@ -53,11 +47,5 @@ public class Utilisateur
     public String getName()
     {
         return name;
-    }
-
-    public void affiche(){
-        String message ="prenom : "+getName()+" \nnom: "+getLastName()+"\nmail: "+ getEmail();
-        Log.w(TAG, message);
-
     }
 }
