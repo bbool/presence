@@ -1,24 +1,35 @@
 package com.adam.presence;
-
 import android.provider.ContactsContract;
 
 import java.util.ArrayList;
-
 public class Eleve
 {
     private String id;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String mail;
     private boolean isPresent = false;
 
     public Eleve() {}
 
-    public Eleve( String id, String firstname, String lastname, String mail)
-    {
+    public Eleve( String id, String firstname, boolean t, String lastname, String mail) {
         this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstName = firstname;
+        this.lastName = lastname;
+        this.mail = mail;
+        isPresent = t;
+    }
+
+    public Eleve( String id, String firstName, String lastName, String mail) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.mail = mail;
+    }
+
+    public Eleve(String firstName, String lastName, String mail) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.mail = mail;
     }
 
@@ -31,19 +42,19 @@ public class Eleve
     }
 
     public String getFirstname() {
-        return firstname;
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstname(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastname() {
-        return lastname;
+        return lastName;
     }
 
     public void setLastname(String lastname) {
-        this.lastname = lastname;
+        this.lastName = lastname;
     }
 
     public String getMail()
@@ -75,4 +86,8 @@ public class Eleve
     {
         this.isPresent = false;
     }
+
+    public String toString () {
+
+        return "\nid: "+this.id+"\n prénom : "+this.firstName+"\n nom:"+this.lastName+"\n mail : "+this.mail+"\n"; }
 }

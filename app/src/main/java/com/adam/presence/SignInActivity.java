@@ -17,9 +17,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 @SuppressWarnings("ALL")
 public class SignInActivity extends AppCompatActivity {
@@ -38,7 +40,7 @@ public class SignInActivity extends AppCompatActivity {
         this.myRef = mDatabase.getReference("utilisateurs");
 
         mAuth = FirebaseAuth.getInstance();
-        TextView btn = (TextView)findViewById(R.id.activity_main_link_connexion);
+        TextView btn = (TextView) findViewById(R.id.activity_main_link_connexion);
 
         btn.setOnClickListener(new View.OnClickListener() {
 
@@ -59,21 +61,20 @@ public class SignInActivity extends AppCompatActivity {
 
     }
 
-    protected void inscription ()
-    {
-        EditText nameView = findViewById(R.id. nomInscription);
+    protected void inscription() {
+        EditText nameView = findViewById(R.id.nomInscription);
         String nom = nameView.getText().toString();
 
-        EditText firstnameView = findViewById(R.id. prenomInscription);
+        EditText firstnameView = findViewById(R.id.prenomInscription);
         String prenom = firstnameView.getText().toString();
 
-        EditText emailView = findViewById(R.id. mailInscription);
+        EditText emailView = findViewById(R.id.mailInscription);
         String email = emailView.getText().toString();
 
-        EditText passwordView = findViewById(R.id. mdpInscription);
+        EditText passwordView = findViewById(R.id.mdpInscription);
         String password = passwordView.getText().toString();
 
-        EditText passwordVerifView = findViewById(R.id. mdpVerifInscription);
+        EditText passwordVerifView = findViewById(R.id.mdpVerifInscription);
         String passwordVerif = passwordVerifView.getText().toString();
 
         if (password.equals(passwordVerif)) {
@@ -103,16 +104,44 @@ public class SignInActivity extends AppCompatActivity {
     private void updateUI(FirebaseUser user) {
     }
 
+
     public void writeNewUser(String userId, String name, String lastname, String mail) {
-        Utilisateur utilisateur = new Utilisateur(name, lastname, mail);
+        utilisateur = new Utilisateur(name, lastname, mail);
 
         this.mDatabase = FirebaseDatabase.getInstance();
         this.myRef = mDatabase.getReference("utilisateurs");
-        myRef.child(userId).setValue(utilisateur, new DatabaseReference.CompletionListener() {
-            @Override
-            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
-                Toast.makeText(SignInActivity.this, "User added.", Toast.LENGTH_SHORT).show();
-            }
-        });
+       // myRef.child(userId);
+        myRef.child(userId).setValue(utilisateur,
+                new DatabaseReference.CompletionListener() {
+                    @Override
+                    public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                        Toast.makeText(SignInActivity.this, "User added.", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    DatabaseReference elevesRef = FirebaseDatabase.getInstance().getReference().child("eleves");
+                    ValueEventListener usersEvent = new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                                String firstName = ds.child("firstName").getValue(String.class);
+                                String lastName = ds.child("lastName").getValue(String.class);
+                                String mail = ds.child("mail").getValue(String.class);
+                                //Utilisateur user = new Utilisateur(mail, name, adresse);
+                                Eleve eleve = new Eleve(firstName,lastName,mail);
+                                eleve.getMail();
+                                Toast.makeText(SignInActivity.this, eleve.getMail() , Toast.LENGTH_SHORT).show();
+                                //bdd.addUsers(user);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    };
+                    //usersRef.addListenerForSingleValueEvent(usersEvent);
+
+
+                });
     }
 }

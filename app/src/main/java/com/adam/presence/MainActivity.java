@@ -17,10 +17,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
     private String TAG = "Utilisateur"; //canal utiliser pour le terminal
+    private String TAG2 = "Eleves"; //canal utiliser pour le terminal
     private FirebaseAuth mAuth; //création de l'objet d'autantification
 
 
@@ -33,6 +38,22 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
+
+        FirebaseDatabase.getInstance().getReference("eleves").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds : snapshot.getChildren()){
+                    Eleve e = ds.getValue(Eleve.class);
+                    Log.d(TAG2, "eleve is"+e.toString());
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         TextView btn = (TextView)findViewById(R.id.inscription_link_inscrir);
 

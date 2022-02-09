@@ -13,13 +13,9 @@ public class Cours
     private Date dateDebut;
     private float duree;
 
-    public Cours()
-    {
+    public Cours() {}
 
-    }
-
-    public Cours( String id, String professeur, String matiere, Date dateDebut, float duree)
-    {
+    public Cours( String id, String professeur, String matiere, Date dateDebut, float duree) {
         this.id = id;
         this.professeur = professeur;
         this.matiere = matiere;
@@ -42,17 +38,10 @@ public class Cours
         this.matiere = matiere;
     }
 
-    public void setDateDebut(Date dateDebut)
-    {
-        this.dateDebut = dateDebut;
-    }
-
     public void setDuree(float duree)
     {
         this.duree = duree;
     }
-
-
 
     public String getId()
     {
@@ -79,11 +68,7 @@ public class Cours
         return duree;
     }
 
-
-
-
-    public void affiche()
-    {
+    public void affiche() {
         Date dateDebutTest = null; //null --> donner une date
         String message = "";
         Log.w(TAG, message);
