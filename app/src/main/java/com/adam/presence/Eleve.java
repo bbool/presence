@@ -89,5 +89,6 @@ public class Eleve
 
     public String toString () {
 
-        return "\nid: "+this.id+"\n prénom : "+this.firstName+"\n nom:"+this.lastName+"\n mail : "+this.mail+"\n"; }
+        return "\nid: "+this.id+"\n prénom : "+this.firstName+"\n nom:"+this.lastName+"\n mail : "+this.mail+"\n";
+    }
 }

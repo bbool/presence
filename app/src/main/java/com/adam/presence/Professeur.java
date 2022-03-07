@@ -5,11 +5,12 @@ import java.util.ArrayList;
 public class Professeur {
     private String id;
     private String firstname;
-    private String lastname;
+    private String lastName;
+    private String email;
     private ArrayList<Groupe> groups;
     //private ArrayList<String> subjects;
 
-    public Professeur(String id)
+    public Professeur()
     {
         // Get the right Group in Database
     }
@@ -31,11 +32,19 @@ public class Professeur {
     }
 
     public String getLastname() {
-        return lastname;
+        return lastName;
     }
 
     public void setLastname(String lastname) {
-        this.lastname = lastname;
+        this.lastName = lastname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public ArrayList<Groupe> getGroups() {
@@ -48,6 +57,12 @@ public class Professeur {
 
     public void addGroup(Groupe group) {
         this.groups.add(group);
+    }
+
+
+    public String toString () {
+
+        return "\nid: "+this.id+"\n prénom : "+this.firstname+"\n nom:"+this.lastName+"\n mail : "+this.email+"\n";
     }
 
     /*public ArrayList<String> getSubjects() {

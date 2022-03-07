@@ -33,18 +33,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connexion);
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        FirebaseDatabase.getInstance().getReference("eleves").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("utilisateurs").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds : snapshot.getChildren()){
-                    Eleve e = ds.getValue(Eleve.class);
-                    Log.d(TAG2, "eleve is"+e.toString());
+                    Professeur e = ds.getValue(Professeur.class);
                 }
 
             }
