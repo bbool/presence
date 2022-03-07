@@ -26,7 +26,7 @@
                 android:layout_width="375dp"
                 android:layout_height="182dp"
                 android:background="#83072E74"
-                android:text="Prochain cours:  [nom du cours] [classe]/ ou cours actuel" />
+                android:text="Prochain cours:  [nom du cours] [classe] / ou cours actuel" />
 
             <Space
                 android:layout_width="match_parent"
